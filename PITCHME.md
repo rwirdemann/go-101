@@ -121,7 +121,7 @@ Note:
 
 ### Cross Platform-Binaries
 
-<img src="figures/one-big-binary.png" alt="Drawing" style="width: 780px;"/>
+<img src="assets/one-big-binary.png" alt="Drawing" style="width: 780px;"/>
 
 ---
 
@@ -159,7 +159,7 @@ Note:
 
 # <span style="color: green;">Block 2:</span> Syntax
 
-<img src="figures/go-syntax.png" alt="Drawing" style="width: 500px;"/>
+<img src="assets/go-syntax.png" alt="Drawing" style="width: 500px;"/>
 
 ---
 
@@ -1378,7 +1378,7 @@ func main() {
 
 ## <span style="color: green;">Block 3:</span> Eigenschaften
 
-<img src="figures/go-eigenschaften.png" alt="Drawing" border="0" style="width: 600px;"/>
+<img src="assets/go-eigenschaften.png" alt="Drawing" border="0" style="width: 600px;"/>
 
 ---
 
@@ -2227,19 +2227,19 @@ Note:
 
 ---
 
-<img src="figures/tiobe-headline.png" alt="Drawing"/>
+<img src="assets/tiobe-headline.png" alt="Drawing"/>
 
 <small>Quelle: https://www.tiobe.com/tiobe-index/</small>
 
 ---
 
-<img src="figures/tiobe-2017.png" alt="Drawing"/>
+<img src="assets/tiobe-2017.png" alt="Drawing"/>
 
 <small>Quelle: https://www.tiobe.com/tiobe-index/</small>
 
 ---
 
-<img src="figures/wer-nutzt-go.jpg" alt="Drawing" style="height: 500px;"/>
+<img src="assets/wer-nutzt-go.jpg" alt="Drawing" style="height: 500px;"/>
 
 <small>Quelle: https://github.com/golang/go/wiki/GoUsers</small>
 
@@ -2264,7 +2264,7 @@ Note:
 
 ---
 
-<img src="figures/go-usage-2016.png" alt="Drawing" style="height: 400px;"/>
+<img src="assets/go-usage-2016.png" alt="Drawing" style="height: 400px;"/>
 
 <small>Quelle: https://blog.golang.org/survey2016-results</small>
 
@@ -2328,7 +2328,7 @@ Note:
 
 ### Performance
 
-<img src="figures/moore__sl_small.png" alt="Drawing" style="width: 740px;"/>
+<img src="assets/moore__sl_small.png" alt="Drawing" style="width: 740px;"/>
 
 Note:
 - Moore's Law läuft aus
@@ -2340,7 +2340,7 @@ Note:
 
 ### World class Standard Library 
 
-![optional caption text](figures/standard-library.png)
+![optional caption text](assets/standard-library.png)
 
 Note:
 - 160 Packages: Komprimierung, Bildbearbeitung, Crypto, Database, Math, Strings, Testing
@@ -2457,7 +2457,7 @@ func main() {
 
 ### Deployment
 
-<img src="figures/one-big-binary.png" alt="Drawing" style="width: 780px;"/>
+<img src="assets/one-big-binary.png" alt="Drawing" style="width: 780px;"/>
 
 Note:
 - compiled to assembler
@@ -2529,7 +2529,7 @@ type MyStruct&ltT> struct { ...}        // Doesn't compile
 
 # No GUI
 
-<img src="figures/no-gui.png" alt="Drawing" style="height: 400px;"/>
+<img src="assets/no-gui.png" alt="Drawing" style="height: 400px;"/>
 
 ---
 
