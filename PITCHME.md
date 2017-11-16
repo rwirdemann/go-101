@@ -1,14 +1,15 @@
 ## Should I stay or should I Go?
+
+Java Forum Nord 2017 Hannover
+
 Ralf Wirdemann - kommitment GmbH & Co. KG
 
 Note:
 Mein Name ist Ralf Wirdemann, das ist meine Firma "kommitment" und heute geht es um Go.
 
-Kurz zu mir: Ich arbeite als Softwarecoach, d.h. helfe Teams bei der Produktentwicklung. Ich bin dabei weder reiner Agile Coach, noch reiner Programmierer, sondern versuche vielmehr eine ganzheitliche Sicht auf Teams, Prozesse und Technolgien einzunehmen.
+Kurz zu mir: Ich arbeite als Softwarecoach. Ich bring Teams methodisch und technisch auf Spur.
 
-Mein Job ist es Teams sowhl methodisch als auch technisch auf Spur zu bringen und dazu gehört es für mich auch, Technisch immer dran zu bleiben, und sich z.B. neue Programmiersprachen anzugucken.
-
-Go umtreibt mich seit gut zwei Jahren, initialer Funke: Freunde, Konferenz, Paris.
+Dazu gehört auch: Auf der suche nach Technolgien zu sein.
 
 ---
 
@@ -61,98 +62,19 @@ Note:
 
 ---
 
-# Meine Geschichte 
+## Um was geht es heute?
+
+<ul style="list-style-type: none">
+	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 1:</span> Überblick</li>
+	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 2:</span> Go's Syntax</li>
+	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 3:</span> Go's Eigenschaften</li>
+	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 4:</span> Wer, wofür, warum?</li>
+	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 5:</span> Was nervt?</li>
+</ul>
 
 ---
 
-# 1992
-
-<pre><code class="c" data-trim>
-int main() {
-	printf("Hello World\n");
-	return 0;
-}
-</code></pre>
-
----
-
-# 1994
-
-<pre><code class="c++" data-trim data-noescape>
-main() {
-	cout << "Hello World" << endl;
-}
-</code></pre>
-
----
-
-# 2000
-
-<pre><code class="java" data-trim data-noescape>
-public class HelloWorld {
- 
-	public static void main (String[] args) {
-		System.out.println("Hello World");
-	}
-}
-</code></pre>
-
----
-
-# 2008
-
-<pre><code class="ruby" data-trim data-noescape>
-puts 'Hello World'
-</code>
-
----
-
-# 2016
-<pre><code class="objective-c" data-trim data-noescape>
-int main (int argc, const char * argv[]) {
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	NSLog(@"Hello World!");
-	[pool drain];
-	return 0;
-}
-</code></pre>
-
----
-
-# 2016
-
-<pre><code class="go" data-trim data-noescape>
-func main() {
-	print("Hello World\n")
-}
-
-<span class="fragment">
-int main() {
-	printf("Hello World\n");
-	return 0;
-}
-</span>
-</code></pre>
-
-Note:
-- am ende war es dann auch das objective-c beispiel, was nochmal zusätzlich motiviert hat, go zu lernen
-
----
-
-## 40 Jahre später
-
-![optional caption text](figures/c-book-go-book.png)
-
----
-
-## Die Programmiersprache Go
-
-<p class="fragment">Geschichte</p>
-<p class="fragment">Syntax</p>
-<p class="fragment">Eigenschaften</p>
-<p class="fragment">Wer, wofür, warum?</p>
-<p class="fragment">Was mir nicht so gefällt</p>
-<p class="fragment">Fazit</p>
+# <span style="color: green;">Block 1:</span> Überblick
 
 ---
 
@@ -197,6 +119,12 @@ Note:
 
 ---
 
+### Cross Platform-Binaries
+
+<img src="figures/one-big-binary.png" alt="Drawing" style="width: 780px;"/>
+
+---
+
 ## Only 25 Keywords
 
 <pre class="stretch"><code class="go" data-trim data-noescape>    
@@ -224,11 +152,14 @@ Note:
 <p class="fragment">Keine Enums</p>
 <p class="fragment">Keine Generics</p>
 <p class="fragment">Keine Optionals</p>
+<p class="fragment">Keine Annotationen</p>
 <p class="fragment">Kein protected</p>
 
 ---
 
-# A tour of go
+# <span style="color: green;">Block 2:</span> Syntax
+
+<img src="figures/go-syntax.png" alt="Drawing" style="width: 500px;"/>
 
 ---
 
@@ -378,21 +309,6 @@ package main
 
 import "fmt"
 
-var name string
-
-func main() {
-	<mark>name = "Jax"</mark>
-	fmt.Println("Hello, ", name)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import "fmt"
-
 func main() {
 	<mark>name := "Jax"</mark>
 	fmt.Println("Hello, ", name)
@@ -427,83 +343,9 @@ package main
 
 import "fmt"
 
-type message string
-
-<mark>var m message</mark>
-
-func main() {
-	m = "Hello, Jax"
-	fmt.Println(m)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import "fmt"
-
-type message string
-
-var m message
-
-func main() {
-	<mark>m = "Hello, Jax"</mark>
-	fmt.Println(m)
-}
-</code></pre>
-
----
-
-## Zusammengesetzte Typen 
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import "fmt"
-
 <mark>type greeting struct {</mark>
 	message string
 	greetee string
-}
-
-func main() {
-	g := greeting{message: "Hello", greetee: "Jax"}
-	fmt.Println(g.message, g.greetee)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import "fmt"
-
-type greeting struct {
-    <mark>message string</mark>	
-	greetee string
-}
-
-func main() {
-	g := greeting{message: "Hello", greetee: "Jax"}
-	fmt.Println(g.message, g.greetee)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import "fmt"
-
-type greeting struct {
-	message string
-	<mark>greetee string</mark>
 }
 
 func main() {
@@ -687,6 +529,9 @@ func main() {
 ---
 
 # Seiteneffekte
+
+Note:
+- Funktionen / Methode, die Zustand des Objektes / Parameter ändert 
 
 ---
 
@@ -1105,6 +950,14 @@ func main() {
 }
 </code></pre>
 
+Note:
+- Pointer ermögliche Immutability 
+- Warum ist Immutability wichtig?
+  - weniger Fehleranfällig, da keine ungewollten Seiteneffekte
+- Funktionen mit Seiteneffekten sind als solche gekennzeichnet
+- In anderen Programmiersprachen muss ich Seiteneffekte verhindern
+- In Go muss ich Seiteneffekte zulassen
+
 ---
 
 # Interfaces
@@ -1323,33 +1176,6 @@ func main() {
 
 ---
 
-# Verzögerungen
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-func main() {
-	if file, err := os.Open("aareal.txt"); err == nil {
-		<mark>defer file.Close()</mark>
-
-		scanner := bufio.NewScanner(file)
-		for scanner.Scan() {
-			bank := service.Parse(scanner.Text())
-			fmt.Printf("%v", bank)
-		}
-	} else {
-		log.Fatal(err)
-	}
-}
-</code></pre>
-
-Note:
-- Verzögerte Ausführung: wenn die aufgerufene Funktion endet
-- Lokalität: Ich vergesse es nicht, sehe den Bezug
-- Ausführung nicht garantiert (anders als finally)
-
----
-
 # Go auf einer Seite
 
 ---
@@ -1550,11 +1376,9 @@ func main() {
 
 ---
 
-## Go - Spracheigenschaften
+## <span style="color: green;">Block 3:</span> Eigenschaften
 
-<p class="fragment">Objektorientierte Programmierung</p>
-<p class="fragment">Funktionale Programmierung</p>
-<p class="fragment">Concurrency</p>
+<img src="figures/go-eigenschaften.png" alt="Drawing" border="0" style="width: 600px;"/>
 
 ---
 
@@ -1808,6 +1632,27 @@ type B struct {
 b := B{}
 b.print()  // Not allowed in Java
 b.Count = 12  
+</code></pre>
+
+---
+
+## Go
+<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
+type A struct {
+	Count int
+}
+
+type B struct {
+	A
+}
+
+func (a A) print() {
+    ...
+}
+
+<mark>b := B{}</mark>
+b.print()  // Not allowed in Java
+b.Count = 12
 </code></pre>
 
 ---
@@ -2085,202 +1930,15 @@ Note:
 
 ---
 
-# Pointer
-
-<p class="fragment">Waren wir froh, als wir sie los waren</p>
-<p class="fragment">NullPointerException</p>
-<p class="fragment">Immutability for free</p>
-<p class="fragment">Entscheide dich: by value oder by reference</p>
-<p class="fragment">Seiteneffekte werden sichtbar</p>
-<p class="fragment">Garbage Collection, keine Pointerarithmetik</p>
+# FP
 
 Note:
-- Warum ist Immutability wichtig?
-  - weniger Fehleranfällig, da keine ungewollten Seiteneffekte
-  - einfach: es gibt nur einen Zustand
-  - Threadsafe, können ohne synchronisation geshared werden
-- Beispiel in Java: String, BigDecimal
-- aber eigene Klassen sind per Default immer mutable
-- imutability muss programmiert werden
-  - final, private, only getter
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-<mark>type TradeAllocated struct {</mark>
-	isin  string
-	price float64
-}
-
-func (e TradeAllocated) execute() {
-	fmt.Printf("Executing %v\n", e)
-	e.price = 455.99
-}
-
-func main() {
-	e := TradeAllocated{isin: "IBM", price: 23.99}
-	e.execute()
-	fmt.Printf("Trade executed %v", e)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-type TradeAllocated struct {
-	isin  string
-	price float64
-}
-
-<mark>func (e TradeAllocated) execute() {</mark>
-	fmt.Printf("Executing %v\n", e)
-	e.price = 455.99
-}
-
-func main() {
-	e := TradeAllocated{isin: "IBM", price: 23.99}
-	e.execute()
-	fmt.Printf("Trade executed %v", e)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-type TradeAllocated struct {
-	isin  string
-	price float64
-}
-
-func (e TradeAllocated) execute() {
-	fmt.Printf("Executing %v\n", e)
-	<mark>e.price = 455.99</mark>
-}
-
-func main() {
-	e := TradeAllocated{isin: "IBM", price: 23.99}
-	e.execute()
-	fmt.Printf("Trade executed %v", e)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-type TradeAllocated struct {
-	isin  string
-	price float64
-}
-
-func (e TradeAllocated) execute() {
-	fmt.Printf("Executing %v\n", e)
-	e.price = 455.99
-}
-
-func main() {
-	<mark>e := TradeAllocated{isin: "IBM", price: 23.99}</mark>
-	e.execute()	
-	fmt.Printf("Trade executed %v", e)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-type TradeAllocated struct {
-	isin  string
-	price float64
-}
-
-func (e TradeAllocated) execute() {
-	fmt.Printf("Executing %v\n", e)
-	e.price = 455.99
-}
-
-func main() {
-	e := TradeAllocated{isin: "IBM", price: 23.99}
-	<mark>e.execute()</mark>
-	fmt.Printf("Trade executed %v", e)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-type TradeAllocated struct {
-	isin  string
-	price float64
-}
-
-func (e TradeAllocated) execute() {
-	fmt.Printf("Executing %v\n", e)
-	e.price = 455.99
-}
-
-func main() {
-	e := TradeAllocated{isin: "IBM", price: 23.99}
-	e.execute()
-	fmt.Printf("Trade executed %v", e) <mark>=> price = 23.99</mark> 
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-type TradeAllocated struct {
-	isin  string
-	price float64
-}
-
-func (<mark>e *TradeAllocated</mark>) execute() {
-	fmt.Printf("Executing %v\n", e)
-	e.price = 455.99
-}
-
-func main() {
-	e := TradeAllocated{isin: "IBM", price: 23.99}
-	e.execute()
-	fmt.Printf("Trade executed %v", e)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-type TradeAllocated struct {
-	isin  string
-	price float64
-}
-
-func (e *TradeAllocated) execute() {
-	fmt.Printf("Executing %v\n", e)
-	e.price = 455.99
-}
-
-func main() {
-	e := TradeAllocated{isin: "IBM", price: 23.99}
-	e.execute()
-	fmt.Printf("Trade executed %v", e) => <mark>price = 455.99</mark>
-}
-</code></pre>
-
-Note:
-- Pointer in Go: Best of both worlds
-  - Immutablity -> keine unerwünschten Seiteneffekte
-  - explizite Sichtbarkeit von Referenz d.h. Seiteneffekte
-- Aber nicht so schlimm wie in C
-  - keine Pointer-Arithmetik
-  - Garbage Collection
-
----
-
-# Funktionale Programmierung
-
-Note:
-- Go ist Dogmen-frei, untersützt aber OO und Funktionale Programmierung, ohne sich Hybrid zu nennen
-- Funktionale Programmierung
-  - Funktionen als First Class Objects
+- Multi-Paradigmen Programmiersprache
+- Funktionale Programmierung:
+  - Immutability
   - Seiteneffektfreiheit
+  - Funktionen sind First Class-Objekte
+- Pointer in Go adressieren die ersten beiden Punkte
 
 ---
 
@@ -2378,6 +2036,9 @@ func main() {
 
 # Concurrency
 
+Note:
+Programmiersprache, die heuten Rechensystem gerecht wird
+
 ---
 
 <pre class="stretch"><code class="nohighlight" data-trim data-noescape>
@@ -2405,9 +2066,6 @@ func sum(s []int) int {
 
 <mark>println("sum: ", sum(values))</mark> // sum:  124999999750000000
 </code></pre>
-
-Note:
-- 6.431s
 
 ---
 
@@ -2548,36 +2206,44 @@ println("sum: ", s1 + s2)     // sum: 124999999750000000
 </code></pre>
 
 Note:
-- Die Go-Runtine erzeugt eine Reihe von Threads, die für die Ausführung von von Go Routinen genutzt werden (gem-ultiplexed). Go Routinen werden von der Runtime erzeugt und wieder freigegeben. Das OS weiss nichts von ihnen. Threads werden preemptiv, Go Routinen cooperativ gescheduled. Schedule Zeit für Goroutine ist O(1), d.h. Anzahl hat keine Auswirkung.
-- Einfach ausgedrückt: Goroutinen sind leichtgewichtige Abstraktionen basierend auf Threads. Goprogrammierer müssen nichts von Threads wissen.
-- Channels are the pipes that connect concurrent goroutines
-- By default sends and receives block until both the sender and receiver are ready. 
-- By default channels are unbuffered, meaning that they will only accept sends (chan <-) if there is a corresponding receive (<- chan) ready to receive the sent value.
+- Go-Runtine erzeugt Threads
+- Threads führen Go-Routinen aus
+- leichtgewichtige Abstraktionen von Threads
 
 ---
 
-## Go Spracheigenschaften Zusammenfassung
+# Zusammenfassung
 
+<p class="fragment">Kapselung über Packages</p>
 <p class="fragment">Komposition statt Vererbung</p>
 <p class="fragment">Interfaces</p>
 <p class="fragment">Polymorphismus</p>
-<p class="fragment">Pointer</p>
 <p class="fragment">Funktionale Programmierung</p>
 <p class="fragment">Concurrency</p>
 
 ---
 
-# Wer nutzt Go?
+## <span style="color: green;">Block 4:</span> Wer, wofür, warum?
 
-<p class="fragment">Google</p>
-<p class="fragment">Docker</p>
-<p class="fragment">Wunderkinder</p>
-<p class="fragment">Dropbox</p>
-<p class="fragment">Blockchain-Projekte</p>
-<p class="fragment">U-Boot Projekte (z.B. Otto)</p>
+---
+
+<img src="figures/tiobe-headline.png" alt="Drawing"/>
+
+<small>Quelle: https://www.tiobe.com/tiobe-index/</small>
+
+---
+
+<img src="figures/tiobe-2017.png" alt="Drawing"/>
+
+<small>Quelle: https://www.tiobe.com/tiobe-index/</small>
+
+---
+
+<img src="figures/wer-nutzt-go.jpg" alt="Drawing" style="height: 500px;"/>
+
+<small>Quelle: https://github.com/golang/go/wiki/GoUsers</small>
 
 Note:
-- Source: https://github.com/golang/go/wiki/GoUsers
 - Google
   - Kubernetes (Container Orchestrierung)
 - Wunderlist
@@ -2598,52 +2264,18 @@ Note:
 
 ---
 
-### Commandline Tools
+<img src="figures/go-usage-2016.png" alt="Drawing" style="height: 400px;"/>
 
-<img src="figures/cmd-line-tool.png" alt="Drawing" style="width: 780px;"/>
-
----
-
-### REST APIs und Microservices
-
-<img src="figures/app-type-two.png" alt="Drawing" style="width: 780px;"/>
+<small>Quelle: https://blog.golang.org/survey2016-results</small>
 
 Note:
-- Go für Microservices, weil
-  - Networking Library
-  - Easy to deploy
-  - Performance (compiled into native assembler)
-  - Concurrency
-  - Robust
-- auch: Web-Apps, Commandline Tools, Embedded
-
----
-
-### Weitere Anwendungen
-
-<p class="fragment">Netzwerkdienste, z.B. RAT, HAT</p>
-<p class="fragment">Dateisysteme, z.B. AFS</p>
-<p class="fragment">Datenbanken, z.B. Edgestore</p>
-<p class="fragment">Messaging</p>
-<p class="fragment">oder allgemein DevOp Tools</p>
-
-Note:
-- Allgemein: Alles was im Hintergrund läuft und schnell und robust sein muss
-- RAT: rate limiting and throttling (Bandbreitenregulierung)
-- HAT: memcached replacement
-- AFS: file system to replace global Zookeeper
-- Edgestore: distributed database
-- DevOps Tools:
-  - db management tools
-  - deployment, restart tools
-  - monitoring tools 
-  - Go ist so einfach zu schreiben wie Ruby oder Python, aber, ist deshalb einfach zu deployne, crossplattform und sehr schnell
-
----
-
-### Go 2016 Survey Results
-
-<img src="figures/go-usage-2016.png" alt="Drawing" style="width: 1600px;"/>
+- März 2017 Go 2016 Survey Results
+- 3500 Entwickler: 60% Web, 35% DevOps
+- CLI: Go-Tools, Unix-Tools, Git, DB-Clients, DevOps-Tools
+- Alles was im Hintergrund läuft, dabei robust und schnell sein muss
+  - Dropbox: Bandbreitenregulierung
+  - Edgestore: Verteilte Datenbank
+  - Blockchain
 
 ---
 
@@ -2654,17 +2286,19 @@ Note:
 # Produktivität
 
 <p class="fragment">Erlernbarkeit</p>
-<p class="fragment">Standards</p>
+<p class="fragment">Standards und Konventionen</p>
 <p class="fragment">Lesbarkeit</p>
 <p class="fragment">Sprachstabil</p>
-<p class="fragment">Sprache für Teams</p>
 
 Note:
 - Erlernbarkeit:
-  - 25 Keywords: Einfach aber Ausrducksstark
   - Chad Fowler: 1 Talk, ich: eher eine Woche
+  - 25 Keywords: Einfach aber Ausrducksstark
 - Standards: 
   - gofmt, Klammersetzung, nur ein for
+  - ungenutze Imports, Variablen sind Fehler
+- Lesbarkeit:
+  - alle nutzen die selben Konstrukte
 - Sprachstabil: Syntax seit 1.0 fixed
   - aber: Library Updates
   - Tool-Verbesserungen: Compiler, GC
@@ -2673,14 +2307,12 @@ Note:
 
 # Typsicherheit
 
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
+<pre class="stretch"><code class="go" data-trim data-noescape>
 
-Map&lt;String, List&lt;Contact>> sections =
-    new HashMap&lt;String, List&lt;Contact>>();
+Map&lt;String, List&lt;Contact>> m = new HashMap&lt;String, List&lt;Contact>>();
 
 <span class="fragment">
-Map&lt;String, List&lt;Contact>> sections = 
-    new HashMap&lt;>();
+Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();
 </span>
 <span class="fragment">
 sections := make(map[string][]Contact)
@@ -2703,19 +2335,6 @@ Note:
 - Performanceanforderungen bleiben hoch
 - Compiliert
 - Schneller Compiler
-
----
-
-### Deployment
-
-<img src="figures/one-big-binary.png" alt="Drawing" style="width: 780px;"/>
-
-Note:
-- compiled to assembler
-- Go-Runtime: goroutines, memory allocation, the garbage collector, channels, interfaces, maps, slices
-- At linking time, the linker creates a statically linked ELF (or PE or MachO) file which includes the runtime, your program, and every package that your program references. 
-- just copy
-- no external dependencies
 
 ---
 
@@ -2775,7 +2394,7 @@ Note:
 - nicht Teil der Sprache, aber Sprache gibt alles her, um nen Webserver zu bauen. Ohne Framework
 
 ---
-
+ 
 <pre class="stretch"><code class="nohighlight" data-trim data-noescape>
 package main
 
@@ -2836,17 +2455,27 @@ func main() {
 
 ---
 
+### Deployment
+
+<img src="figures/one-big-binary.png" alt="Drawing" style="width: 780px;"/>
+
+Note:
+- compiled to assembler
+- Go-Runtime: goroutines, memory allocation, the garbage collector, channels, interfaces, maps, slices
+- At linking time, the linker creates a statically linked ELF (or PE or MachO) file which includes the runtime, your program, and every package that your program references. 
+- just copy
+- no external dependencies
+
+---
+
 # Was nervt?
 
 ---
 
-# Error Handling
-
----
+## No Exceptions
 
 <pre class="stretch"><code class="go" data-trim data-noescape>
-func create(a *Activity) {
-	
+func create(a *Activity) {	
 	var res Result
 	var err Error
 	
@@ -2863,7 +2492,6 @@ func create(a *Activity) {
 	}
 	 	 
     activity.Id = id
-	
 	...
 }		
 </pre>
@@ -2873,28 +2501,39 @@ func create(a *Activity) {
 # Keine Generics
 
 <pre><code class="java" data-trim data-noescape>
+// Generics in Java
+
 List&ltString> l = new ArrayList<>();
+
 Map&lt;String, Media> m = new HashMap<>();
 
-<span class="fragment">
-l := [5]string
-m := make(map[string]Media)
+public class MyClass&ltT> { ... }
 </span>
 </code></pre>
 
 ---
 
-# Keine Klassen
+# Keine Generics
 
-<p class="fragment">weniger Strukturvorgaben</p>
-<p class="fragment">wohin mit meinen Structs?</p>
-<p class="fragment">wohin mit meinen Methoden?</p>
-<p class="fragment">wohin mit meinen Funktionen?</p>
-<p class="fragment">was wird Funktion, was wird Methode?</p>
+<pre><code class="go" data-trim data-noescape>
+// Lack of Generics in Go        
+
+l := [5]string                        // Ok
+
+m := make(map[string]Media)           // Ok 
+
+type MyStruct&ltT> struct { ...}        // Doesn't compile 
+</code></pre>
 
 ---
 
-## Dependency Management 
+# No GUI
+
+<img src="figures/no-gui.png" alt="Drawing" style="height: 400px;"/>
+
+---
+
+## Simple but insufficient Dependency Management 
 
 ---
 
@@ -3034,20 +2673,28 @@ Note:
 
 ---
 
-| Pluspunkte || Minuspunkte |
-| --- || --- |
-| Einfachheit || Dependency Management |
-| Lesbarkeit || Keine Generics |
-| Erlernbarkeit || Fehlerbehandlung |
-| Produktivität || Anfangs schwierig für OO-Leute |
-| OO + Funktional ||  |
-| Concurrency ||  |
-| Performance ||  |
-| Deployment ||  |
+### Should I stay?
+
+<p style="text-align: left;">
+Go ist eine Programmierspache, die stark an das <span style="color: red;">40 Jahre</span> alte "C" erinnert, die weder über <span style="color: red;">Generics</span>, <span style="color: red;">GUI-Bibliotheken</span> oder <span style="color: red;">Exceptions</span> noch einem durchdachten <span style="color: red;">Dependency Management</span>-Konzept verfügt.
+</p>	
 
 ---
 
-# Resourcen
+### or Should I Go?
+
+<p style="text-align: left;">
+Go ist eine <span style="color: green;">einfache</span>, <span style="color: green;">statisch</span> getypte, <span style="color: green;">compilierte</span> Programmiersprache. 
+</br>
+Einfaches <span style="color: green;">Deployment</span>, hohe <span style="color: green;">Performance</span> und sehr guter <span style="color: green;">HTTP/JSON-</span> und <span style="color: green;">Test-Support</span> machen Go zu meiner ersten Wahl für die Entwicklung von <span style="color: green;">REST-APIs</span>. 
+</br>
+Hohe <span style="color: green;">Lesbarkeit</span> macht Go zudem zu einer Sprache für <span style="color: green;">produktive</span> Softwareteams.
+</p>	
+
+---
+
+# Ressourcen
+
 
 https://tour.golang.org
 
@@ -3057,8 +2704,6 @@ The Go Programming Language
 
 ---
 
-# Hey ho, let's Go
-
-## Vielen Dank!
+# Vielen Dank!
 
 <p>ralf.wirdemann@kommitment.biz</p>
