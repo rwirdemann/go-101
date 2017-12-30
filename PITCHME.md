@@ -127,8 +127,8 @@ Note:
 
 ## Only 25 Keywords
 
-<pre class="stretch"><code class="go" data-trim data-noescape>    
-  break        default          func        interface       select 
+<pre class="stretch"><code class="go">    
+  break        default          var         interface       select 
   
   case         defer            go          map             struct 
 
@@ -136,7 +136,7 @@ Note:
 
   const        fallthrough      if          range           type
 
-  continue     for              import      return          var
+  continue     for              import      return          func
 </code></pre>
 
 Note:
