@@ -81,19 +81,27 @@ Note:
 # Geschichte
 
 <p class="fragment">2007: Frust Komplextität von Google-Software</p>
-<p class="fragment">Ken Thompson, Rob Pike, Robert Griesemer</p>
-<p class="fragment">Idee: Einfache, compilierbare Programmiersprache, die heutigen Rechensystemen gerecht wird</p>
-<p class="fragment">2009: Erste öffentliche Version im November</p>
+<p class="fragment">Schwer zu managende Abhängigkeiten</p>
+<p class="fragment">Langsame Builds</p>
+<p class="fragment">Jeder nutzt unterschiedliche Subsets der Sprache</p>
+<p class="fragment">Updates sind teuer</p>
+
+---
+
+![Logo](assets/griesemer-pike-thompson.png)
 
 Note:
-- Frust:
-  - Schwer zu managende Abhängigkeiten
-  - langsame Builds
-  - jeder nutzt unterschiedliche Subsets der Sprache
-  - Updates sind teuer 
+- Idee: Einfache, compilierbare Programmiersprache, die heutigen Rechensystemen gerecht wird
+
+---
+
+![Logo](assets/tech-timeline.png)
+
+Note:
 - Thomposon: Unix, erste Shell, UTF-8, Plan 9
 - Rob Pike: Unix, Plan 9, UTF-8
 - Griesemer: V8 JavaScript Engine, Java Hotspot VM
+- 2009 erste öffentliche Version
 
 ---
 
