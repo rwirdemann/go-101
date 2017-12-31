@@ -80,11 +80,13 @@ Note:
 
 # Geschichte
 
-<p class="fragment">2007: Frust Komplextität von Google-Software</p>
-<p class="fragment">Schwer zu managende Abhängigkeiten</p>
-<p class="fragment">Langsame Builds</p>
-<p class="fragment">Jeder nutzt unterschiedliche Subsets der Sprache</p>
-<p class="fragment">Updates sind teuer</p>
+<ul style="list-style-type: none">
+	<li class="fragment" style="text-align: left;">2007: Frust Komplextität von Google-Software</li>
+	<li class="fragment" style="text-align: left;">Schwer zu managende Abhängigkeiten</li>
+	<li class="fragment" style="text-align: left;">Langsame Builds</li>
+	<li class="fragment" style="text-align: left;">Jeder nutzt unterschiedliche Subsets der Sprache</li>
+	<li class="fragment" style="text-align: left;">Updates sind teuer</li>
+</ul>
 
 ---
 
