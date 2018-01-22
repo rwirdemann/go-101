@@ -1,6 +1,6 @@
 ## Should I stay or should I Go?
 
-Java Forum Nord 2017 Hannover
+OOP 2018 München
 
 Ralf Wirdemann - kommitment GmbH & Co. KG
 
@@ -17,14 +17,18 @@ Dazu gehört auch: Auf der suche nach Technolgien zu sein.
 - (RACSignal *)getAllGroupsV2 {
    
     RACSignal *signal = [communicator get:@"http://picue.de/groups"];
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [signal subscribeNext:^(NSDictionary *data) {
+    
+	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    
+	    [signal subscribeNext:^(NSDictionary *data) {
             NSManagedObjectContext *context =
 			    [PQCoreDataManager sharedManager].managedContext;
             [PQGroup createOrUpdateWithContext:context data:data];
-        } error:^(NSError *error){
+    
+	    } error:^(NSError *error){
             [subscriber sendError:error];
-        } completed:^{
+    
+	    } completed:^{
             [[PQCoreDataManager sharedManager] saveContext];
             [subscriber sendCompleted];
         }];
@@ -92,14 +96,14 @@ Note:
 
 ---
 
-![Logo](assets/griesemer-pike-thompson.png)
+![Image](assets/griesemer-pike-thompson.png)
 
 Note:
 - Idee: Einfache, compilierbare Programmiersprache, die heutigen Rechensystemen gerecht wird
 
 ---
 
-![Logo](assets/tech-timeline.png)
+![Image](assets/tech-timeline.png)
 
 Note:
 - Thomposon: Unix, erste Shell, UTF-8, Plan 9
@@ -1390,7 +1394,9 @@ func main() {
 
 ## <span style="color: green;">Block 3:</span> Eigenschaften
 
-<img src="assets/go-eigenschaften.png" alt="Drawing" border="0" style="width: 600px;"/>
+<p class="fragment">Objektorientierte Programmierung</p>
+<p class="fragment">Funktionale Programmierung</p>
+<p class="fragment">Concurrency</p>
 
 ---
 
@@ -2319,17 +2325,41 @@ Note:
 
 # Typsicherheit
 
-<pre class="stretch"><code class="go" data-trim data-noescape>
+<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
+
+<mark>Map&lt;String, List&lt;Contact>> m = new HashMap&lt;String, List&lt;Contact>>();</mark>
+
+Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();
+
+sections := make(map[string][]Contact)
+</code>
+</pre>
+
+---
+
+# Typsicherheit
+
+<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
 
 Map&lt;String, List&lt;Contact>> m = new HashMap&lt;String, List&lt;Contact>>();
 
-<span class="fragment">
-Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();
-</span>
-<span class="fragment">
-sections := make(map[string][]Contact)
-</span>
+<mark>Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();</mark>
 
+sections := make(map[string][]Contact)
+</code>
+</pre>
+
+---
+
+# Typsicherheit
+
+<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
+
+Map&lt;String, List&lt;Contact>> m = new HashMap&lt;String, List&lt;Contact>>();
+
+Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();
+
+<mark>sections := make(map[string][]Contact)<mark>
 </code>
 </pre>
 
@@ -2352,7 +2382,7 @@ Note:
 
 ### World class Standard Library 
 
-![optional caption text](assets/standard-library.png)
+![Image](assets/standard-library.png)
 
 Note:
 - 160 Packages: Komprimierung, Bildbearbeitung, Crypto, Database, Math, Strings, Testing
@@ -2480,7 +2510,7 @@ Note:
 
 ---
 
-# Was nervt?
+## <span style="color: green;">Block 5:</span> Was nervt?
 
 ---
 
