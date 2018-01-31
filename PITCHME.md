@@ -13,7 +13,7 @@ Dazu gehört auch: Auf der suche nach Technolgien zu sein.
 
 ---
 
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
+<pre class="stretch"><code class="objective-c" data-trim data-noescape>
 - (RACSignal *)getAllGroupsV2 {
    
     RACSignal *signal = [communicator get:@"http://picue.de/groups"];
@@ -32,14 +32,15 @@ Dazu gehört auch: Auf der suche nach Technolgien zu sein.
             [[PQCoreDataManager sharedManager] saveContext];
             [subscriber sendCompleted];
         }];
-        return nil;
+        
+		return nil;
     }];
 }
 </code></pre>
 
 ---
 
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
+<pre class="stretch"><code class="go" data-trim data-noescape>
 func getAllGroupsV2() {
 	if resp, err := http.Get("http://picue.de/groups"); err != nil {
 		panic(err)
@@ -170,6 +171,7 @@ Note:
 <p class="fragment">Keine Optionals</p>
 <p class="fragment">Keine Annotationen</p>
 <p class="fragment">Kein protected</p>
+<p class="fragment">Keine Exceptions</p>
 
 ---
 
@@ -1948,14 +1950,14 @@ Note:
 
 ---
 
-# FP
+## Funktionale Programierung
+
+<p class="fragment">Immutability</p>
+<p class="fragment">Seiteneffektfreiheit</p>
+<p class="fragment">Funktionen sind First Class-Objekte</p>
 
 Note:
 - Multi-Paradigmen Programmiersprache
-- Funktionale Programmierung:
-  - Immutability
-  - Seiteneffektfreiheit
-  - Funktionen sind First Class-Objekte
 - Pointer in Go adressieren die ersten beiden Punkte
 
 ---
@@ -2237,7 +2239,7 @@ Note:
 <p class="fragment">Interfaces</p>
 <p class="fragment">Polymorphismus</p>
 <p class="fragment">Funktionale Programmierung</p>
-<p class="fragment">Concurrency</p>
+<p class="fragment">Go-Routinen für Nebenläufigkeit</p>
 
 ---
 
@@ -2331,7 +2333,7 @@ Note:
 
 Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();
 
-sections := make(map[string][]Contact)
+m := make(map[string][]Contact)
 </code>
 </pre>
 
@@ -2345,7 +2347,7 @@ Map&lt;String, List&lt;Contact>> m = new HashMap&lt;String, List&lt;Contact>>();
 
 <mark>Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();</mark>
 
-sections := make(map[string][]Contact)
+m := make(map[string][]Contact)
 </code>
 </pre>
 
@@ -2359,7 +2361,7 @@ Map&lt;String, List&lt;Contact>> m = new HashMap&lt;String, List&lt;Contact>>();
 
 Map&lt;String, List&lt;Contact>> m = new HashMap&lt;>();
 
-<mark>sections := make(map[string][]Contact)<mark>
+<mark>m := make(map[string][]Contact)<mark>
 </code>
 </pre>
 
@@ -2569,12 +2571,6 @@ type MyStruct&ltT> struct { ...}        // Doesn't compile
 
 ---
 
-# No GUI
-
-<img src="assets/no-gui.png" alt="Drawing" style="height: 400px;"/>
-
----
-
 ## Simple but insufficient Dependency Management 
 
 ---
@@ -2715,11 +2711,28 @@ Note:
 
 ---
 
-### Should I stay?
+<h2> Should I stay or should I Go?</h2>
 
-<p style="text-align: left;">
-Go ist eine Programmierspache, die stark an das <span style="color: red;">40 Jahre</span> alte "C" erinnert, die weder über <span style="color: red;">Generics</span>, <span style="color: red;">GUI-Bibliotheken</span> oder <span style="color: red;">Exceptions</span> noch einem durchdachten <span style="color: red;">Dependency Management</span>-Konzept verfügt.
-</p>	
+
+---
+
+<h2><span style="color: grey;">Should I stay or should</span> <span style="color: green;">I Go!</span></h2>
+
+---
+
+<h2><span style="color: grey;">Should I stay or should</span> <span style="color: green;">I Go!</span></h2>
+
+<table>
+<tr>
+	<th>Cons</th><th>Pros</th>
+</tr>
+<tr>
+	<td>Dependency Management</td><td>Klar, reduziert, alles geht</td>
+</tr>
+<tr>
+	<td>Öffentliches Git-Repository verschwunden</td><td>Klar, reduziert, alles geht</td>
+</tr>
+<table>
 
 ---
 
