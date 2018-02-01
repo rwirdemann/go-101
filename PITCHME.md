@@ -2711,45 +2711,87 @@ Note:
 
 ---
 
-<h2> Should I stay or should I Go?</h2>
-
-
----
-
-<h2><span style="color: grey;">Should I stay or should</span> <span style="color: green;">I Go!</span></h2>
-
----
-
-<h2><span style="color: grey;">Should I stay or should</span> <span style="color: green;">I Go!</span></h2>
+<h2>Should I stay or should I Go?</h2>
 
 <table>
 <tr>
-	<th>Cons</th><th>Pros</th>
+	<td><span style="color: grey">Keine Klassen</span></td>
+	<td><span style="color: grey">Klar, reduziert, alles geht</span></td>
 </tr>
 <tr>
-	<td>Dependency Management</td><td>Klar, reduziert, alles geht</td>
+	<td><span style="color: grey">Öffentliches Git-Repo verschwunden</span></td>
+	<td><span style="color: grey">Einfacher Einstieg in existierende Sourcen</span></td>
 </tr>
 <tr>
-	<td>Öffentliches Git-Repository verschwunden</td><td>Klar, reduziert, alles geht</td>
+	<td><span style="color: grey">Mocking</span></td>
+	<td><span style="color: grey">Erste Wahl für Web APIs</span></td>
+</tr>
+<tr>
+	<td><span style="color: grey"></span></td>
+	<td><span style="color: grey">Kein Framework</span></td>
+</tr>
+<tr>
+	<td><span style="color: grey"></span></td>
+	<td><span style="color: grey">Leichtigkeit und Spass</span></td>
 </tr>
 <table>
 
 ---
 
-### or Should I Go?
+<h2><span style="color: grey;">Should <span style="color: red">I stay</span> or should I Go?</span></h2>
 
-<p style="text-align: left;">
-Go ist eine <span style="color: green;">einfache</span>, <span style="color: green;">statisch</span> getypte, <span style="color: green;">compilierte</span> Programmiersprache. 
-</br>
-Einfaches <span style="color: green;">Deployment</span>, hohe <span style="color: green;">Performance</span> und sehr guter <span style="color: green;">HTTP/JSON-</span> und <span style="color: green;">Test-Support</span> machen Go zu meiner ersten Wahl für die Entwicklung von <span style="color: green;">REST-APIs</span>. 
-</br>
-Hohe <span style="color: green;">Lesbarkeit</span> macht Go zudem zu einer Sprache für <span style="color: green;">produktive</span> Softwareteams.
-</p>	
+<table>
+<tr>
+	<td><span style="color: red">Keine Klassen</span></td><td><span style="color: grey">Klar, reduziert, alles geht</span></td>
+</tr>
+<tr>
+	<td><span style="color: red">Öffentliches Git-Repo verschwunden</span></td>
+	<td><span style="color: grey">Einfacher Einstieg in existierende Sourcen</span></td>
+</tr>
+<tr>
+	<td><span style="color: red">Mocking</span></td>
+	<td><span style="color: grey">Erste Wahl für Web APIs</span></td>
+</tr>
+<tr>
+	<td><span style="color: red"></span></td>
+	<td><span style="color: grey">Kein Framework</span></td>
+</tr>
+<tr>
+	<td><span style="color: red"></span></td>
+	<td><span style="color: grey">Leichtigkeit und Spass</span></td>
+</tr>
+<table>
+
+---
+
+<h2><span style="color: grey;">Should I stay or should</span> <span style="color: green;">I Go?</span></h2>
+
+<table>
+<tr>
+	<td><span style="color: grey">Keine Klassen</span></td>
+	<td><span style="color: green">Klar, reduziert, alles geht</span></td>
+</tr>
+<tr>
+	<td><span style="color: grey">Öffentliches Git-Repo verschwunden</span></td>
+	<td><span style="color: green">Einfacher Einstieg in existierende Sourcen</span></td>
+</tr>
+<tr>
+	<td><span style="color: grey">Mocking</span></td>
+	<td><span style="color: green">Erste Wahl für Web APIs</span></td>
+</tr>
+<tr>
+	<td><span style="color: grey"></span></td>
+	<td><span style="color: green">Kein Framework</span></td>
+</tr>
+<tr>
+	<td><span style="color: grey"></span></td>
+	<td><span style="color: green">Leichtigkeit und Spass</span></td>
+</tr>
+<table>
 
 ---
 
 # Ressourcen
-
 
 https://tour.golang.org
 
