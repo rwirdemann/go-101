@@ -116,15 +116,25 @@ Note:
 
 ## Statisch getypt
 
-<pre><code class="go" data-trim data-noescape>    
+````
+var i int
+
 s := "Hallo"      // string
+f := 3.142        // float
 
-i := 42           // int
+type struct Product {
+    Id   int
+    Name string
+}
 
-f := 3.142        // float64
+func foo(p Product) {
+}
 
-g := 0.867 + 0.5i // complex128
-</code></pre>
+p := Product{1, "Schuhe"}
+
+foo(p)
+```
+@[1]
 
 Note:
 - Objekte haben Typ
@@ -2801,6 +2811,6 @@ The Go Programming Language
 
 ---
 
-# Vielen Dank!
+# return "fun"
 
 <p>ralf.wirdemann@kommitment.biz</p>
