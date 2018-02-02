@@ -135,6 +135,8 @@ p := Product{1, "Schuhe"}
 foo(p)
 ```
 @[1]
+@[3-4]
+@[6-15]
 
 Note:
 - Objekte haben Typ
