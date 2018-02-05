@@ -46,11 +46,11 @@ func getAllGroupsV2() {
 		panic(err)
 	}
 
-	var groups []*domain.Group
+	var groups []domain.Group
 	json := resp.Body
 	decoder := json.NewDecoder(json)	
 	decode.Decode(&groups)
-	database.CreateGroups(&groups)
+	database.CreateGroups(groups)
 }
 </code></pre>
 
@@ -67,18 +67,6 @@ Note:
 
 ---
 
-## Um was geht es heute?
-
-<ul style="list-style-type: none">
-	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 1:</span> Überblick</li>
-	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 2:</span> Go's Syntax</li>
-	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 3:</span> Go's Eigenschaften</li>
-	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 4:</span> Wer, wofür, warum?</li>
-	<li class="fragment" style="text-align: left;"><span style="color: green;">Block 5:</span> Was nervt?</li>
-</ul>
-
----
-
 # <span style="color: green;">Block 1:</span> Überblick
 
 ---
@@ -88,11 +76,11 @@ Note:
 <p class="fragment" style="text-align: left;">2007: Frust Komplextität von Google-Software</p>
 
 <ul style="list-style-type: square">
-	<li class="fragment" style="text-align: left;">Schwer zu managende Abhängigkeiten</li>
+	<li class="fragment" style="text-align: left;">Komplexe Abhängigkeiten</li>
 	<li class="fragment" style="text-align: left;">Langsame Builds</li>
 	<li class="fragment" style="text-align: left;">Jeder nutzt unterschiedliche Subsets der Sprache</li>
+	<li class="fragment" style="text-align: left;">Mangelnde Lesbarkeit</li>
 	<li class="fragment" style="text-align: left;">Updates sind teuer</li>
-	<li class="fragment" style="text-align: left;">Mangelnde Lesbarkeit</li>	
 </ul>
 
 ---
@@ -134,7 +122,6 @@ p := Product{1, "Schuhe"}
 
 foo(p)
 ```
-
 Note:
 - Objekte haben Typ
 - Sicherstellen, das z.B. Variablen, Funktionen korrekt verwendet werden
@@ -250,20 +237,6 @@ package main
 }
 
 func main() {
-	x, y := swap(2, 1)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-func swap(x int, y int) (int, int) {
-	return y, x
-}
-
-<mark>func main() {</mark>
 	x, y := swap(2, 1)
 }
 </code></pre>
@@ -2300,7 +2273,7 @@ Note:
 Note:
 - März 2017 Go 2016 Survey Results
 - 3500 Entwickler: 60% Web, 35% DevOps
-- CLI: Go-Tools, Unix-Tools, Git, DB-Clients, DevOps-Tools
+- CLI: Go-Tools, DevOps-Tools
 - Alles was im Hintergrund läuft, dabei robust und schnell sein muss
   - Dropbox: Bandbreitenregulierung
   - Edgestore: Verteilte Datenbank
@@ -2318,6 +2291,7 @@ Note:
 <p class="fragment">Standards und Konventionen</p>
 <p class="fragment">Lesbarkeit</p>
 <p class="fragment">Sprachstabil</p>
+<p class="fragment">Spass</p>
 
 Note:
 - Erlernbarkeit:
@@ -2396,115 +2370,7 @@ Note:
 ![Image](assets/standard-library.png)
 
 Note:
-- 160 Packages: Komprimierung, Bildbearbeitung, Crypto, Database, Math, Strings, Testing
-
----
-
-# net/http
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import (
-	"fmt"
-	<mark>"net/http"</mark>
-)
-
-func handleRequest(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, World\n")
-}
-
-func main() {
-	http.HandleFunc("/hello", handleRequest)
-	http.ListenAndServe(":8080", nil)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import (
-	"fmt"
-	"net/http"
-)
-
-<mark>func handleRequest(w http.ResponseWriter, r *http.Request) {</mark>
-	fmt.Fprintf(w, "Hello, World\n")
-}
-
-func main() {
-	http.HandleFunc("/hello", handleRequest)
-	http.ListenAndServe(":8080", nil)
-}
-</code></pre>
-
-Note:
-- Beispiel für Standard-Bibliothek
-- nicht Teil der Sprache, aber Sprache gibt alles her, um nen Webserver zu bauen. Ohne Framework
-
----
- 
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import (
-	"fmt"
-	"net/http"
-)
-
-func handleRequest(w http.ResponseWriter, r *http.Request) {
-	<mark>fmt.Fprintf(w, "Hello, World\n")</mark>
-}
-
-func main() {
-	http.HandleFunc("/hello", handleRequest)
-	http.ListenAndServe(":8080", nil)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import (
-	"fmt"
-	"net/http"
-)
-
-func handleRequest(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, World\n")
-}
-
-func main() {
-	<mark>http.HandleFunc("/hello", handleRequest)</mark>
-	http.ListenAndServe(":8080", nil)
-}
-</code></pre>
-
----
-
-<pre class="stretch"><code class="nohighlight" data-trim data-noescape>
-package main
-
-import (
-	"fmt"
-	"net/http"
-)
-
-func handleRequest(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, World\n")
-}
-
-func main() {
-	http.HandleFunc("/hello", handleRequest)
-	<mark>http.ListenAndServe(":8080", nil)</mark>
-}
-</code></pre>
+- 160 Packages: http, json, Database, testing, Komprimierung, Bildbearbeitung, Crypto, Math, Strings
 
 ---
 
@@ -2696,9 +2562,9 @@ src/
 		domain/
 			models.go
 <mark>
-	github.com/go-sql-driver/
+	<mark>github.com/go-sql-driver/</mark>
 		mysql/
-			appengine.go
+			appengine.go	
 </mark>	
 </code></pre>
 
@@ -2736,7 +2602,7 @@ Note:
 	<td><span style="color: grey">Erste Wahl für Web APIs</span></td>
 </tr>
 <tr>
-	<td><span style="color: grey"></span></td>
+	<td><span style="color: grey">Missing implements</span></td>
 	<td><span style="color: grey">Kein Framework</span></td>
 </tr>
 <tr>
@@ -2762,7 +2628,7 @@ Note:
 	<td><span style="color: grey">Erste Wahl für Web APIs</span></td>
 </tr>
 <tr>
-	<td><span style="color: red"></span></td>
+	<td><span style="color: red">Missing implements</span></td>
 	<td><span style="color: grey">Kein Framework</span></td>
 </tr>
 <tr>
@@ -2789,7 +2655,7 @@ Note:
 	<td><span style="color: green">Erste Wahl für Web APIs</span></td>
 </tr>
 <tr>
-	<td><span style="color: grey"></span></td>
+	<td><span style="color: grey">Missing implements</span></td>
 	<td><span style="color: green">Kein Framework</span></td>
 </tr>
 <tr>
