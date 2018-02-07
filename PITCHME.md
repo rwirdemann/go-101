@@ -2676,6 +2676,6 @@ The Go Programming Language
 
 ---
 
-# return "fun"
+## return "simplicity and fun"
 
 <p>ralf.wirdemann@kommitment.biz</p>
