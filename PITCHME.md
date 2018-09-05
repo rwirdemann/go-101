@@ -1,8 +1,6 @@
 ## Should I stay or should I Go?
 
-OOP 2018 München
-
-Ralf Wirdemann - kommitment GmbH & Co. KG
+Ralf Wirdemann - Software Coaching
 
 Note:
 Mein Name ist Ralf Wirdemann, das ist meine Firma "kommitment" und heute geht es um Go.
