@@ -122,6 +122,11 @@ p := Product{1, "Schuhe"}
 
 foo(p)
 ```
+@[1]
+@[3-4]
+@[6-9]
+@[11-12]
+
 Note:
 - Objekte haben Typ
 - Sicherstellen, das z.B. Variablen, Funktionen korrekt verwendet werden
