@@ -11,7 +11,7 @@ Dazu gehört auch: Auf der suche nach Technolgien zu sein.
 
 ---
 
-```
+<pre class="stretch"><code class="objective-c" data-trim data-noescape>
 - (RACSignal *)getAllGroupsV2 {
    
     RACSignal *signal = [communicator get:@"http://picue.de/groups"];
@@ -34,7 +34,7 @@ Dazu gehört auch: Auf der suche nach Technolgien zu sein.
 		return nil;
     }];
 }
-```
+</code></pre>
 
 ---
 
