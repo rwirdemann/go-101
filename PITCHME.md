@@ -44,13 +44,13 @@ Dazu gehört auch: Auf der suche nach Technolgien zu sein.
 func getAllGroupsV2() {
 	if resp, err := http.Get("http://picue.de/groups"); err != nil {
 		panic(err)
+	} else {
+		var groups []domain.Group
+		json := resp.Body
+		decoder := json.NewDecoder(json)	
+		decode.Decode(&groups)
+		database.CreateGroups(groups)
 	}
-
-	var groups []domain.Group
-	json := resp.Body
-	decoder := json.NewDecoder(json)	
-	decode.Decode(&groups)
-	database.CreateGroups(groups)
 }
 </code></pre>
 
@@ -102,7 +102,7 @@ Note:
 
 ---
 
-## Statisch getypt
+## Statisch getypte
 
 ````
 var i int
